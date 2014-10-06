@@ -53,4 +53,36 @@ The MyProject project directory contains an additional subdirectory named myproj
 Pyramid sample code. This is where you'll edit your application's Python code and 
 templates.
 ```
+** Installing MyProject for Development**
+$ cd MyProject
+$ $VENV/bin/python setup.py develop
+
+**Running The MyProject Application**
+
+Once a project is installed for development, you can run the application it represents using the pserve command against the generated configuration file. In our case, this file is named development.ini.
+
+$ $VENV/bin/pserve development.ini
+
+**Automatically forcing the Server to Reload Code after changes**
+
+During development, it's often useful to run pserve using its --reload option. When --reload is passed to pserve, changes to any Python module your project uses will cause the server to restart. This typically makes development easier, as changes to Python code made within a Pyramid application is not put into effect until the server restarts.
+
+$ $VENV/bin/pserve development.ini --reload
+
+** Setting up the Debugging Toolbar**
+
+If you click on the tool image shown at the right hand top of the page ("^DT"), you'll be presented with a debug toolbar that provides various niceties while you're developing. This image will float above every HTML page served by Pyramid while you develop an application, and allows you show the toolbar as necessary. Click on Hide to hide the toolbar and show the image again.
+
+If you don't see the debug toolbar image on the right hand top of the page, it means you're browsing from a system that does not have debugging access. By default, for security reasons, only a browser originating from localhost (127.0.0.1) can see the debug toolbar. To allow your browser on a remote system to access the server, add a line within the [app:main] section of the development.ini file in the form debugtoolbar.hosts = X.X.X.X. For example, if your Pyramid application is running on a remote system, and you're browsing from a host with the IP address 192.168.1.1, you'd add something like this to enable the toolbar when your system contacts Pyramid:
+
+[app:main]
+# .. other settings ...
+
+# By default, the toolbar only appears for clients from IP addresses
+# '127.0.0.1' and '::1'.
+# debugtoolbar.hosts = 127.0.0.1 ::1
+debugtoolbar.hosts = 0.0.0.0/0 # This is dangerous and a Security Vunerability
+
+
+
 
