@@ -1,4 +1,8 @@
 LearnPyramid
 ============
 
-Repository for Learning Pyramid
+Repository for Learning Pyramid Python Framework
+
+Assumes Ubunty Trusty
+
+
