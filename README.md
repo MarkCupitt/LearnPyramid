@@ -3,31 +3,32 @@ LearnPyramid
 
 Repository for Learning Pyramid Python Framework
 
-Assumes Ubunty Trusty
+**Assumes Ubunty Trusty**
 
 $ git clone --recursive git://github.com/MarkCupitt/LearnPyramid.git
 
 $ cd LearnPyramid
 
-Setup tools required
+**Setup tools required**
 
 $ sudo python ez_setup.py
 
-Install Virtual Environment as it is recommended by Pyramid
+**Install Virtual Environment as it is recommended by Pyramid**
 
 $ sudo easy_install virtualenv
 
 (do not use sudo to run the virtualenv script. It's perfectly acceptable (and desirable) to create a virtualenv as a normal user.)
+
 $ export VENV=~/env
 $ virtualenv $VENV
 
-Install Pyramid into teh Virtual Environment
+**Install Pyramid into teh Virtual Environment**
 
 $ $VENV/bin/easy_install "pyramid==1.5.1"
 
-(If you see any warnings and/or errors related to failing to compile the C extensions, in most cases you may safely ignore those errors. If you wish to use the C extensions, please verify that you have a functioning compiler and the Python header files installed.)
+*(If you see any warnings and/or errors related to failing to compile the C extensions, in most cases you may safely ignore those errors. If you wish to use the C extensions, please verify that you have a functioning compiler and the Python header files installed.)*
 
-Create a New Pyramid Project called MyProject
+**Create a New Pyramid Project called MyProject**
 
 $ $VENV/bin/pcreate -s starter MyProject
 
