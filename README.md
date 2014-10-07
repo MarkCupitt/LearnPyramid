@@ -1,5 +1,5 @@
-LearnPyramid
-============
+LearnPyramid.
+================
 
 Repository for Learning Pyramid Python Framework
 
